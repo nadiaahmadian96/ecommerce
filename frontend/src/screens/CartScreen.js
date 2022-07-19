@@ -35,7 +35,7 @@ const CartScreen = ({ match, location, history }) => {
         <h1>علاقه مندی ها</h1>
         {cartItems.length === 0 ? (
           <Message>
-            علاقه مندی های شما خالی میباشد <Link to='/'>Go Back</Link>
+            علاقه مندی های شما خالی میباشد <Link to='/'>برگشت</Link>
           </Message>
         ) : (
           <ListGroup variant='flush'>
@@ -86,8 +86,8 @@ const CartScreen = ({ match, location, history }) => {
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-                items
+                مجموع ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                محصول
               </h2>
               $
               {cartItems
@@ -101,7 +101,7 @@ const CartScreen = ({ match, location, history }) => {
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >
-                Proceed To Checkout
+                صدور پیش فاکتور
               </Button>
             </ListGroup.Item>
           </ListGroup>
